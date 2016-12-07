@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context" 
+	xmlns:north="http://static.bucuoa.com/cutesource/schema/north"
+	xsi:schemaLocation="  
+	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd  
+	http://static.bucuoa.com/cutesource/schema/north http://static.bucuoa.com/cutesource/schema/north/north.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd"
+	default-autowire="byName">
+	
+	   <!-- 启用注解 -->
+	<context:annotation-config />
+
+	<!-- 包扫描 -->
+	<context:component-scan base-package="com.bucuoa.west">     
+	    <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" />
+		<context:exclude-filter type="annotation" expression="org.springframework.web.bind.annotation.ControllerAdvice" />
+	</context:component-scan>
+	
+	<north:application id="westdemo_soa" key="3dff4ad316773jhfgf" />
+	<north:registry id="registry" type="west"  address="127.0.0.1" />
+ 	<north:server id="nuts" host="127.0.0.1" port="14527" />
+ 
+	<north:provider id="echoService" server="127.0.0.1" alias="local" interface="com.bucuoa.west.rpc.service.EchoService" ref="echoServiceStub"/>
+	
+	<north:provider id="echoService2" server="127.0.0.1" alias="local" interface="com.bucuoa.west.rpc.service.EchoService" ref="echoServiceStub"/>
+
+	<north:provider id="echoService3" server="127.0.0.1" alias="local" interface="com.bucuoa.west.rpc.service.EchoService" ref="echoServiceStub"/>
+
+	<north:provider id="echoService4" server="127.0.0.1" alias="local" interface="com.bucuoa.west.rpc.service.EchoService" ref="echoServiceStub"/>
+	
+	<bean id="springContextUtil" class="com.bucuoa.west.rpc.utils.SpringContextUtil" name="springContextUtil"></bean>
+	
+	
+</beans>
