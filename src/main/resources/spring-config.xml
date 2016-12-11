@@ -24,14 +24,8 @@
  
 	<north:provider id="echoService" server="127.0.0.1" alias="local" interface="com.bucuoa.west.rpc.service.EchoService" ref="echoServiceStub"/>
 	
-	<north:provider id="echoService2" server="127.0.0.1" alias="local" interface="com.bucuoa.west.rpc.service.EchoService" ref="echoServiceStub"/>
-
-	<north:provider id="echoService3" server="127.0.0.1" alias="local" interface="com.bucuoa.west.rpc.service.EchoService" ref="echoServiceStub"/>
-
-	<north:provider id="echoService4" server="127.0.0.1" alias="local" interface="com.bucuoa.west.rpc.service.EchoService" ref="echoServiceStub"/>
-	
 	<bean id="springContextUtil" class="com.bucuoa.west.rpc.utils.SpringContextUtil" name="springContextUtil"></bean>
 	
-<!-- 	<bean id="server" class="com.bucuoa.west.rpc.remoting.server.RPCServerStub" /> -->
+	<bean id="serverx" class="com.bucuoa.west.rpc.remoting.server.RPCServerStub" /> 
 
 </beans>
