@@ -37,6 +37,12 @@
 			<artifactId>west.rpc.core</artifactId>
 			<version>${west.rpc.version}</version>
 		</dependency>
+		
+		<dependency>
+			<groupId>bucuoa.com</groupId>
+			<artifactId>zkdemo</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 
 	<build>

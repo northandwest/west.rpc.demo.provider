@@ -1,10 +1,25 @@
 package com.bucuoa.west.rpc.service;
 
+import javax.annotation.Resource;
+
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
+
+import com.bucuoa.utils.WestZookeeperClient;
+
 
 @Service("echoServiceStub")
 public class EchoServiceImpl implements EchoService{
+	@Resource
+	@Qualifier("zkCLient")
+	private WestZookeeperClient zkCLient;
 	public String echo(String echo) {
+		String string = "";
+		try {
+			 string = zkCLient.get("/server");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 //		try {
 //			
 		
@@ -12,6 +27,6 @@ public class EchoServiceImpl implements EchoService{
 //		} catch (InterruptedException e) {
 //			e.printStackTrace();
 //		}
-		return "from remote:"+echo;
+		return string+"==>from remote:"+echo;
 	}
 }
