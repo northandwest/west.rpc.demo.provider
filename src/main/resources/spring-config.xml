@@ -26,6 +26,6 @@
 	
 	<bean id="springContextUtil" class="com.bucuoa.west.rpc.utils.SpringContextUtil" name="springContextUtil"></bean>
 	
-	<bean id="serverx" class="com.bucuoa.west.rpc.remoting.server.RPCServerStub" /> 
+	<bean id="rpcserver" class="cc.ymsoft.Framework.RpcFramework" /> 
 
 </beans>
