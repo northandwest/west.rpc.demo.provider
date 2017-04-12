@@ -5,8 +5,7 @@ import java.util.concurrent.locks.LockSupport;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.bucuoa.west.rpc.tags.Consumer;
-import com.bucuoa.west.rpc.tags.Provider;
+import com.bucuoa.west.rpc.bean.Provider;
 
 public class ProviderStartUp {
 	public static void main(String[] args) {
